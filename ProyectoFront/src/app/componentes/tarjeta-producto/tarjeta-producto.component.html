@@ -1,0 +1,23 @@
+<!-- Cree el html para mostrar el contenido que necesita -->
+
+<!-- el nfFor me recorre elementos dentro de un arreglo -->
+<div class="row">
+    <div *ngFor="let producto of allProductos"  class="col">
+        <div class="card" style="width: 18rem;">
+        
+            <img src="https://images.mrcook.app/recipe-image/0191d19a-f504-70a7-a8dd-f4f8f8bfe3da" class="card-img-top"
+                alt="...">
+        
+            <div class="card-body">
+                <h5 class="card-title">{{producto.name}}</h5>
+                <h6>{{producto.category}}</h6>
+                <h6>{{producto.isAvailable ? "disponible" : 'no disponible'}}</h6>
+                <h6>Cantidad: {{producto.stock}}</h6>
+                <h6>{{producto.price}}</h6>
+        
+                <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
+        
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<h3>Informacion del componente hijo:</h3>
+<hr>
+<!-- SE USA ENLACE DE DATOS (INTERPOLACION) -->
+ <h2>VARIABLES</h2>
+<p>El mensaje recibido del padre es {{textoRecibir}}</p>
+<hr>
+<p>El color favorito de mi madre es: {{colorFavoritoPadre}}</p>
+<hr>
+<h2>ARREGLOS</h2>
+<p>Los trabajos de mi padre han sido:
+    <li *ngFor="let trabajo of trabajosPadre">
+        {{trabajo}}
+    </li>
+</p>
+
+<hr>
+<h2>OBJETOS</h2>
+<p>El nombre de mi papá es {{infoPadre.nombre}} {{infoPadre.apellido}},
+    tiene {{infoPadre.edad}} años y su numero de identificacion es {{infoPadre.numeroCedula}}
+</p>
+
+<!-- ENVIAR INFORMACION AL PADRE -->
+<h3>Le voy a enviar datos desde el hijo al padre</h3>
+
+<button (click)="enviarNombre()">ENVIAR NOMBRE</button>
+<hr>

@@ -1,0 +1,87 @@
+<div>
+  <!-- app.component.html -->
+
+  <!-- USO DE INTERPOLACIÓN -->
+  <h1>Bienvenido al Bootcamp de {{ nombreFramework }}</h1>
+  <p>Horas del bootcamp: {{ horasBootcamp }}</p>
+  <p>Especialista: {{ especialista }}</p>
+
+  <!-- MOSTRAR CONTENIDO DE UN OBJETO USANDO INTERPOLACIÓN -->
+  <h2>Tecnologías en el Bootcamp:</h2>
+  <ul>
+    <li>{{ contenidoBootcamp.tecnologia1 }}</li>
+    <li>{{ contenidoBootcamp.tecnologia2 }}</li>
+    <li>{{ contenidoBootcamp.tecnologia3 }}</li>
+    <li>{{ contenidoBootcamp.tecnologia4 }}</li>
+    <li>{{ contenidoBootcamp.tecnologia5 }}</li>
+  </ul>
+
+  <!-- USO DE *ngIf PARA MOSTRAR ELEMENTOS CONDICIONALES -->
+  <div *ngIf="isLogged">
+    <p>Bienvenido, usuario logueado.</p>
+  </div>
+
+  <div *ngIf="isDelete">
+    <p>Elemento eliminado con éxito.</p>
+  </div>
+
+  <!-- USO DE *ngFor PARA RECORRER UN ARRAY Y MOSTRAR ELEMENTOS -->
+  <h2>Lista de Productos:</h2>
+  <ul>
+    <li *ngFor="let producto of productos">{{ producto }}</li>
+  </ul>
+
+  <!-- USO DE EVENT BINDING PARA CAPTURAR EVENTOS EN EL COMPONENTE -->
+  <button (click)="saludo()">Haz clic para saludar</button>
+
+  <!-- EVENTOS DEL MOUSE -->
+  <div (mouseover)="manejarMouseOver()" (mouseout)="manejarMouseOut()" (click)="manejarClick()" [class]="colorFondo"
+    class="caja">
+    Pasa el mouse aquí
+  </div>
+
+  <!-- USO DE PROPERTY BINDING PARA MANEJAR EL ESTADO DE UN ELEMENTO -->
+  <button (click)="cambioShowed()">Mostrar/Ocultar Mensaje</button>
+  <p *ngIf="isShowed">¡Este mensaje aparece y desaparece!</p>
+
+  <!-- FORMULARIOS DRIVEN TEMPLATE -->
+  <h2>Formulario Driven Template</h2>
+  <form (ngSubmit)="manejarEnvio()">
+    <label>Color Favorito:</label>
+    <input type="text" [(ngModel)]="colorFavorito" name="colorFavorito" required>
+    <br>
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="nombre" name="nombre" required>
+    <br>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <!-- FORMULARIOS REACTIVOS -->
+  <h2>Formulario Reactivo</h2>
+  <form [formGroup]="login" (ngSubmit)="manejarEnvioLogin()">
+    <label>Correo:</label>
+    <input type="email" formControlName="correo" required>
+    <br>
+    <label>Contraseña:</label>
+    <input type="password" formControlName="contrasena" required>
+    <br>
+    <button type="submit">Login</button>
+  </form>
+
+
+
+  <!-- COMUNICACION DE COMPONENTES -->
+  <section>
+    <h1>COMUNICACION DE COMPONENTES</h1>
+    <p>
+      1. Importar componente padre en el app
+      2. Importar al componete hijo en el componente padre
+      3. Decirle a hijo ts que debe permitir la entrada y salida de cosas
+      <!-- ENTRADA -->
+      <!-- import { Component, input } from '@angular/core'; -->
+    </p>
+
+    <app-componente-padre></app-componente-padre>
+
+  </section>
+</div>
