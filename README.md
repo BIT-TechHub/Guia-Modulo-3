@@ -50,11 +50,13 @@ Para empezar con el proyecto, sigue estos pasos:
 
 | Comando | Descripción |
 |---------|------------|
-| `ng new nombre-proyecto` | Crea un nuevo proyecto Angular. |
+| `ng new nombre-proyecto` | Crea un nuevo proyecto Angular (standalone). |
 | `ng serve` | Ejecuta el servidor de desarrollo. |
 | `ng generate component nombre-componente` | Genera un nuevo componente. |
-| `ng generate module nombre-modulo` | Crea un nuevo módulo de Angular. |
 | `ng generate service nombre-servicio` | Crea un nuevo servicio en Angular. |
+| `ng generate interface nombre-interfaz` | Crea una nueva interfaz en Angular. |
+| `ng generate guard nombre-guard` | Genera un guard para proteger rutas en Angular. |
+| `ng generate interceptor nombre-interceptor` | Crea un interceptor para manipular solicitudes HTTP. |
 | `ng build` | Compila el proyecto para producción. |
 | `ng test` | Ejecuta pruebas unitarias. |
 | `ng lint` | Analiza el código en busca de errores. |
